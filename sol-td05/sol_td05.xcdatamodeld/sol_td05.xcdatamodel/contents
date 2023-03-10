@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Address" representedClassName="Address" syncable="YES" codeGenerationType="class">
+        <attribute name="city" attributeType="String" minValueString="1"/>
+        <attribute name="postalCode" attributeType="String" minValueString="1"/>
+        <relationship name="people" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Person" inverseName="address" inverseEntity="Person"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+        <attribute name="age" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Address" inverseName="people" inverseEntity="Address"/>
+    </entity>
+</model>
